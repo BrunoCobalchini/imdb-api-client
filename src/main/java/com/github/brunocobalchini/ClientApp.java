@@ -20,6 +20,7 @@ public class ClientApp {
 		
 		for (Actor act : client.getAllActors()) {
 			LOGGER.info("id: {}, name: {}, birthDate: {}", act.getId(), act.getNome(), act.getBirthDate());
+	
 		}
 	}
 }
