@@ -27,10 +27,10 @@ public interface ImdbApi {
 	@RequestLine("POST /actors/{id}")
 	Actor setActorById(@Param("id")String actorId);
 	
-	@Headers({"Accept: application/json"})
-	@RequestLine("POST /actors")
-	Collection<Actor> setAllActors();
-	
+//	@Headers({"Accept: application/json"})
+//	@RequestLine("POST /actors")
+//	Collection<Actor> setAllActors();
+//	
 	
 	public static ImdbApi buildClient(String baseUrl) {
 		return Feign.builder()
