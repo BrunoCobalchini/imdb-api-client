@@ -34,14 +34,18 @@ public class ClientApp {
 		//Movies
 		//"Populate"
 		
-//		String movieId = "tt7286456"; // Joker
-//		Movie movie = client.getMovieByid(movieId);
-//		LOGGER.info("Movie name: {}", movie.getName());
-//		
-//	
-//		for (Movie mov : client.getAllMovies()) {
-//			LOGGER.info("id: {}, name: {}, releaseDate: {}, rating: {}, duration: {]", mov.getId(), mov.getName(), mov.getReleaseDate(), mov.getRating(), mov.getDuration());
-//	
-//		}
+		String movieId = "tt7286456"; // Joker
+		Movie movie = client.getMovieByid(movieId);
+		LOGGER.info("Movie name: {}", movie.getName());
+		
+		for (Movie mov : client.getAllMovies()) {
+			LOGGER.info("id: {}, name: {}, releaseDate: {}, rating: {}, duration: {}", mov.getId(), mov.getName(), mov.getReleaseDate(), mov.getRating(), mov.getDuration());
+	
+		}
 	}
 }
+
+
+
+
+

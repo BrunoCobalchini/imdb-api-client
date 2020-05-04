@@ -44,7 +44,7 @@ public interface ImdbApi {
 	
 	@Headers({"Accept: application/json"})
 	@RequestLine("GET /movies")
-	Collection<Actor> getAllMovies();
+	Collection<Movie> getAllMovies();
 	
 	@Headers({"Accept: application/json", "Content-Type: application/json"})
 	@RequestLine("POST /movies/{id}")
