@@ -5,6 +5,7 @@ import org.slf4j.LoggerFactory;
 
 import com.github.brunocobalchini.api.ImdbApi;
 import com.github.brunocobalchini.model.Actor;
+import com.github.brunocobalchini.model.Movie;
 
 public class ClientApp {
 
@@ -29,5 +30,18 @@ public class ClientApp {
 		for (Actor act : client.getAllActors()) {
 			LOGGER.info("id: {}, name: {}, birthDate: {}", act.getId(), act.getNome(), act.getBirthDate());
 		}
+		
+		//Movies
+		//"Populate"
+		
+//		String movieId = "tt7286456"; // Joker
+//		Movie movie = client.getMovieByid(movieId);
+//		LOGGER.info("Movie name: {}", movie.getName());
+//		
+//	
+//		for (Movie mov : client.getAllMovies()) {
+//			LOGGER.info("id: {}, name: {}, releaseDate: {}, rating: {}, duration: {]", mov.getId(), mov.getName(), mov.getReleaseDate(), mov.getRating(), mov.getDuration());
+//	
+//		}
 	}
 }

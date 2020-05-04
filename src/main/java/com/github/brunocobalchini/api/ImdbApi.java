@@ -3,6 +3,7 @@ package com.github.brunocobalchini.api;
 import java.util.Collection;
 
 import com.github.brunocobalchini.model.Actor;
+import com.github.brunocobalchini.model.Movie;
 
 import feign.Feign;
 import feign.Headers;
@@ -34,8 +35,27 @@ public interface ImdbApi {
 
 	@RequestLine("DELETE /actors/{id}")
 	void deleteActorById(@Param("id") String actorId);
-
-	// TODO: Rest Api (MOVIES)
+	
+	// MOVIES
+	
+	@Headers({"Accept: application/json"})
+	@RequestLine("GET /movies/{id}")
+	Movie getMovieByid(@Param("id") String movieId);
+	
+	@Headers({"Accept: application/json"})
+	@RequestLine("GET /movies")
+	Collection<Actor> getAllMovies();
+	
+	@Headers({"Accept: application/json", "Content-Type: application/json"})
+	@RequestLine("POST /movies/{id}")
+	Movie postMovie(Movie movie, @Param("id") String movieId);
+	
+	@Headers({"Accept: application/json", "Content-Type: application/json"})
+	@RequestLine("PUT /movies/{id}")
+	Movie putMovie(Movie movie, @Param("id") String movieId);
+	
+	@RequestLine("DELETE /movies/{id}")
+	void deleteMovieById(@Param("id") String movieId);
 	
 	public static ImdbApi buildClient(String baseUrl) {
 		return Feign.builder()
@@ -45,5 +65,4 @@ public interface ImdbApi {
 				.decoder(new JacksonDecoder())
 				.target(ImdbApi.class, baseUrl);
 	}
-
 }
